@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_updatemap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 12:39:21 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/14 16:33:21 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/17 11:01:12 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_currentfield(int x, int y, t_so_long *mypath)
 	{
 		ft_paintpath(x, y, mypath);
 	}
-	else 
+	else
 	{
 		ft_paintpath(x, y, mypath);
 		ft_paintplayer(x_next, y_next, mypath);

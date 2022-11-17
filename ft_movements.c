@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/14 17:08:52 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/17 12:14:21 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 void	ft_w(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
-	
+	int		iheight;
+	int		jwidth;
+
 	iheight = mygame->myplayer.vertical;
 	jwidth = mygame->myplayer.horizontal;
+	if (mygame->map.map[iheight - 1][jwidth] != mygame->map.map[3][9])
+	{
 	if (mygame->map.map[iheight - 1][jwidth] == '0'
 		|| mygame->map.map[iheight - 1][jwidth] == 'C'
 		|| mygame->map.map[iheight - 1][jwidth] == '1')
@@ -27,7 +29,7 @@ void	ft_w(t_so_long *mygame)
 		if (mygame->map.map[iheight - 1][jwidth] == 'C')
 			ft_countcol(mygame);
 		else if (mygame->map.map[iheight - 1][jwidth] == '1')
-			ft_paintpath(jwidth, iheight, mygame);	
+			ft_paintpath(jwidth, iheight, mygame);
 		mygame->myplayer.vertical--;
 		ft_updatemap(jwidth, iheight, mygame);
 		ft_currentfield(jwidth, iheight, mygame);
@@ -42,6 +44,11 @@ void	ft_w(t_so_long *mygame)
 		ft_checkcol(mygame);
 		mygame->steps++;
 		printf("Steps taken: %d\n", mygame->steps);
+	}
+	}
+	else
+	{
+		exit(0);
 	}
 }
 
@@ -58,7 +65,7 @@ void	ft_a(t_so_long *mygame)
 	{
 		if (mygame->map.map[iheight][jwidth - 1] == 'C')
 			ft_countcol(mygame);
-		else if (mygame->map.map[iheight][jwidth - 1] == '1' && mygame->map.map[iheight][jwidth - 1] != mygame->map.map[0][0])
+		else if (mygame->map.map[iheight][jwidth - 1] == '1')
 			ft_paintpath(jwidth, iheight, mygame);
 		mygame->myplayer.horizontal--;
 		ft_updatemap(jwidth, iheight, mygame);
