@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_collectexit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:50:07 by jzhou             #+#    #+#             */
-/*   Updated: 2021/09/03 12:33:02 by jzhou            ###   ########.fr       */
+/*   Updated: 2022/11/17 14:48:02 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,10 @@ void	ft_checkcol(t_so_long *mygame)
 	{
 		exit (0);
 	}
+}
+
+void	ft_count_step(t_so_long *mygame)
+{
+	mygame->steps++;
+	printf("Steps taken: %d\n", mygame->steps);
 }

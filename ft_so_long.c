@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:24:16 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/17 11:58:16 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:25:34 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	ft_readmap(t_so_long *mygame, char **argv)
 	close(fdnbr);
 	mygame->img_height = linenbr;
 	mygame->img_width = ft_strlen(mygame->map.map[0]);
-	printf( "map.map0 è %s", mygame->map.map[0]);
 }
 
 void	ft_map_base(t_so_long *mygame)

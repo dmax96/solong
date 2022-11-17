@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/17 12:14:21 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:53:40 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,35 +20,25 @@ void	ft_w(t_so_long *mygame)
 
 	iheight = mygame->myplayer.vertical;
 	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight - 1][jwidth] != mygame->map.map[3][9])
+	if (iheight - 1 != 0)
 	{
-	if (mygame->map.map[iheight - 1][jwidth] == '0'
-		|| mygame->map.map[iheight - 1][jwidth] == 'C'
-		|| mygame->map.map[iheight - 1][jwidth] == '1')
-	{
-		if (mygame->map.map[iheight - 1][jwidth] == 'C')
-			ft_countcol(mygame);
-		else if (mygame->map.map[iheight - 1][jwidth] == '1')
-			ft_paintpath(jwidth, iheight, mygame);
-		mygame->myplayer.vertical--;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
-	}
-	else if (mygame->map.map[iheight - 1][jwidth] == 'E')
-	{
-		mygame->myplayer.vertical--;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		ft_checkcol(mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
-	}
-	}
-	else
-	{
-		exit(0);
+		if (mygame->map.map[iheight - 1][jwidth] == '0'
+			|| mygame->map.map[iheight - 1][jwidth] == 'C'
+			|| mygame->map.map[iheight - 1][jwidth] == '1')
+		{
+			if (mygame->map.map[iheight - 1][jwidth] == 'C')
+				ft_countcol(mygame);
+			else if (mygame->map.map[iheight - 1][jwidth] == '1')
+				ft_paintpath(jwidth, iheight, mygame);
+			mygame->myplayer.vertical--;
+			ft_updatemap(jwidth, iheight, mygame);
+			ft_currentfield(jwidth, iheight, mygame);
+			ft_count_step(mygame);
+		}
+		else if (mygame->map.map[iheight - 1][jwidth] == 'E')
+		{
+			ft_check_w(mygame, iheight, jwidth);
+		}
 	}
 }
 
@@ -59,28 +49,23 @@ void	ft_a(t_so_long *mygame)
 
 	iheight = mygame->myplayer.vertical;
 	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight][jwidth - 1] == '0'
-		|| mygame->map.map[iheight][jwidth - 1] == 'C'
-		|| mygame->map.map[iheight][jwidth - 1] == '1')
+	if (jwidth - 1 != 0)
 	{
-		if (mygame->map.map[iheight][jwidth - 1] == 'C')
-			ft_countcol(mygame);
-		else if (mygame->map.map[iheight][jwidth - 1] == '1')
-			ft_paintpath(jwidth, iheight, mygame);
-		mygame->myplayer.horizontal--;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
-	}
-	else if (mygame->map.map[iheight][jwidth - 1] == 'E')
-	{
-		mygame->myplayer.horizontal--;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		ft_checkcol(mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
+		if (mygame->map.map[iheight][jwidth - 1] == '0'
+			|| mygame->map.map[iheight][jwidth - 1] == 'C'
+			|| mygame->map.map[iheight][jwidth - 1] == '1')
+		{
+			if (mygame->map.map[iheight][jwidth - 1] == 'C')
+				ft_countcol(mygame);
+			else if (mygame->map.map[iheight][jwidth - 1] == '1')
+				ft_paintpath(jwidth, iheight, mygame);
+			mygame->myplayer.horizontal--;
+			ft_updatemap(jwidth, iheight, mygame);
+			ft_currentfield(jwidth, iheight, mygame);
+			ft_count_step(mygame);
+		}
+		else if (mygame->map.map[iheight][jwidth - 1] == 'E')
+			ft_check_a(mygame, iheight, jwidth);
 	}
 }
 
@@ -91,28 +76,23 @@ void	ft_s(t_so_long *mygame)
 
 	iheight = mygame->myplayer.vertical;
 	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight + 1][jwidth] == '0'
-		|| mygame->map.map[iheight + 1][jwidth] == 'C'
-		|| mygame->map.map[iheight + 1][jwidth] == '1')
+	if (iheight + 1 != mygame->img_height - 1)
 	{
-		if (mygame->map.map[iheight + 1][jwidth] == 'C')
-			ft_countcol(mygame);
-		else if (mygame->map.map[iheight + 1][jwidth] == '1')
-			ft_paintpath(jwidth, iheight, mygame);
-		mygame->myplayer.vertical++;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
-	}
-	else if (mygame->map.map[iheight + 1][jwidth] == 'E')
-	{
-		mygame->myplayer.vertical++;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		ft_checkcol(mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
+		if (mygame->map.map[iheight + 1][jwidth] == '0'
+			|| mygame->map.map[iheight + 1][jwidth] == 'C'
+			|| mygame->map.map[iheight + 1][jwidth] == '1')
+		{
+			if (mygame->map.map[iheight + 1][jwidth] == 'C')
+				ft_countcol(mygame);
+			else if (mygame->map.map[iheight + 1][jwidth] == '1')
+				ft_paintpath(jwidth, iheight, mygame);
+			mygame->myplayer.vertical++;
+			ft_updatemap(jwidth, iheight, mygame);
+			ft_currentfield(jwidth, iheight, mygame);
+			ft_count_step(mygame);
+		}
+		else if (mygame->map.map[iheight + 1][jwidth] == 'E')
+			ft_check_s(mygame, iheight, jwidth);
 	}
 }
 
@@ -123,28 +103,23 @@ void	ft_d(t_so_long *mygame)
 
 	iheight = mygame->myplayer.vertical;
 	jwidth = mygame->myplayer.horizontal;
-	if (mygame->map.map[iheight][jwidth + 1] == '0'
-		|| mygame->map.map[iheight][jwidth + 1] == 'C'
-		|| mygame->map.map[iheight][jwidth + 1] == '1')
+	if (jwidth + 1 != mygame->img_width - 1)
 	{
-		if (mygame->map.map[iheight][jwidth + 1] == 'C')
-			ft_countcol(mygame);
-		else if (mygame->map.map[iheight][jwidth + 1] == '1')
-			ft_paintpath(jwidth, iheight, mygame);
-		mygame->myplayer.horizontal++;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
-	}
-	else if (mygame->map.map[iheight][jwidth + 1] == 'E')
-	{
-		mygame->myplayer.horizontal++;
-		ft_updatemap(jwidth, iheight, mygame);
-		ft_currentfield(jwidth, iheight, mygame);
-		ft_checkcol(mygame);
-		mygame->steps++;
-		printf("Steps taken: %d\n", mygame->steps);
+		if (mygame->map.map[iheight][jwidth + 1] == '0'
+			|| mygame->map.map[iheight][jwidth + 1] == 'C'
+			|| mygame->map.map[iheight][jwidth + 1] == '1')
+		{
+			if (mygame->map.map[iheight][jwidth + 1] == 'C')
+				ft_countcol(mygame);
+			else if (mygame->map.map[iheight][jwidth + 1] == '1')
+				ft_paintpath(jwidth, iheight, mygame);
+			mygame->myplayer.horizontal++;
+			ft_updatemap(jwidth, iheight, mygame);
+			ft_currentfield(jwidth, iheight, mygame);
+			ft_count_step(mygame);
+		}
+		else if (mygame->map.map[iheight][jwidth + 1] == 'E')
+			ft_check_d(mygame, iheight, jwidth);
 	}
 }
 

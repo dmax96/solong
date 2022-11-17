@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_game.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:58 by jzhou             #+#    #+#             */
-/*   Updated: 2021/09/03 12:27:38 by jzhou            ###   ########.fr       */
+/*   Updated: 2022/11/17 14:51:49 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,11 @@ int		ft_checksquare(t_so_long *mygame);
 
 //exit game
 int		ft_exitgame(void);
+void	ft_check_w(t_so_long *mygame, int iheight, int jwidth);
+void	ft_check_s(t_so_long *mygame, int iheight, int jwidth);
+void	ft_check_a(t_so_long *mygame, int iheight, int jwidth);
+void	ft_check_d(t_so_long *mygame, int iheight, int jwidth);
+void	ft_count_step(t_so_long *mygame);
 
 //counting the collectible
 void	ft_countcol(t_so_long *mygame);
