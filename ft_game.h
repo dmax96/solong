@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:58 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/17 14:51:49 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:26:09 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ int		ft_checkmap_rd(t_so_long *mygame);
 int		ft_checkmap_in(t_so_long *mygame);
 int		ft_checkmin(t_so_long *mygame);
 int		ft_checksquare(t_so_long *mygame);
+int		ft_checkmap_p(t_so_long *mygame);
 
 //exit game
 int		ft_exitgame(void);

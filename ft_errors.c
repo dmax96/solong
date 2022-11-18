@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:45 by jzhou             #+#    #+#             */
-/*   Updated: 2021/09/03 13:54:31 by jzhou            ###   ########.fr       */
+/*   Updated: 2022/11/18 11:26:56 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	ft_errors(t_so_long *mygame)
 {
 	if (ft_checkmap_lu(mygame) == -1 || ft_checkmap_rd(mygame) == -1
 		|| ft_checkmap_in(mygame) == -1 || ft_checkmin(mygame) == -1
-		|| ft_checksquare(mygame) == -1)
+		|| ft_checksquare(mygame) == -1 || ft_checkmap_p(mygame) == -1)
 	{
 		printf("Error\n");
 		printf("There are inconsistencies in your map!");
