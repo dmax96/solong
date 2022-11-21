@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exitgame.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 13:58:18 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/17 14:47:55 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:56:44 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_check_s(t_so_long *mygame, int iheight, int jwidth)
 {
 	mygame->myplayer.vertical++;
 	ft_updatemap(jwidth, iheight, mygame);
-	ft_currentfield(jwidth, iheight, mygame);
+	ft_currentfield_down(jwidth, iheight, mygame);
 	ft_checkcol(mygame);
 	mygame->steps++;
 	printf("Steps taken: %d\n", mygame->steps);
@@ -41,7 +41,7 @@ void	ft_check_a(t_so_long *mygame, int iheight, int jwidth)
 {
 	mygame->myplayer.horizontal--;
 	ft_updatemap(jwidth, iheight, mygame);
-	ft_currentfield(jwidth, iheight, mygame);
+	ft_currentfield_left(jwidth, iheight, mygame);
 	ft_checkcol(mygame);
 	mygame->steps++;
 	printf("Steps taken: %d\n", mygame->steps);
@@ -51,7 +51,7 @@ void	ft_check_d(t_so_long *mygame, int iheight, int jwidth)
 {
 	mygame->myplayer.horizontal++;
 	ft_updatemap(jwidth, iheight, mygame);
-	ft_currentfield(jwidth, iheight, mygame);
+	ft_currentfield_right(jwidth, iheight, mygame);
 	ft_checkcol(mygame);
 	mygame->steps++;
 	printf("Steps taken: %d\n", mygame->steps);

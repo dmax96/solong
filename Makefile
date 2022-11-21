@@ -8,7 +8,7 @@ FLAGS = -Wall -Wextra -Werror
 MLX = -Lminilibx -lmlx -framework OpenGL -framework AppKit
 
 SRC = ft_so_long.c ft_img_init.c ft_paintfct.c ft_movements.c ft_errors.c \
-	ft_exitgame.c ft_collectexit.c ft_updatemap.c ft_errorsquare.c
+	ft_exitgame.c ft_collectexit.c ft_updatemap.c ft_errorsquare.c ft_playermovement.c
 
 LIBFT_PATH = ./libft
 

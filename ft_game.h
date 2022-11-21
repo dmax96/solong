@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_game.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:58 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/18 11:26:09 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:12:08 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ typedef struct s_so_long
 
 	void		*path;
 	void		*wall;
-	void		*player;
+	void		*playerdown;
+	void		*playerup;
+	void		*playerleft;
+	void		*playerright;
 	void		*collect;
 	void		*exitus;
 
@@ -64,6 +67,9 @@ typedef struct s_so_long
 	char		*rel_path_path;
 	char		*rel_path_wall;
 	char		*rel_path_ply;
+	char		*rel_path_plydown;
+	char		*rel_path_plyleft;
+	char		*rel_path_plyright;
 	char		*rel_path_col;
 	char		*rel_path_exi;
 
@@ -84,9 +90,12 @@ void	ft_setcollect(int jwidth, int iheight, t_so_long *mygame);
 //paiting functions
 void	ft_paintwall(int x, int y, t_so_long *wall);
 void	ft_paintpath(int x, int y, t_so_long *path);
-void	ft_paintplayer(int x, int y, t_so_long *playerimg);
+void	ft_paintplayer_up(int x, int y, t_so_long *playerimg);
 void	ft_paint_collect(int x, int y, t_so_long *collect);
 void	ft_paintexit(int x, int y, t_so_long *exitus);
+void	ft_paintplayer_down(int x, int y, t_so_long *playerimg);
+void	ft_paintplayer_left(int x, int y, t_so_long *playerimg);
+void	ft_paintplayer_right(int x, int y, t_so_long *playerimg);
 
 //for moving the player around
 int		ft_playermove(int keycode, t_so_long *mygame);
@@ -98,6 +107,9 @@ void	ft_d(t_so_long *mygame);
 //for updatiing the map
 void	ft_updatemap(int x, int y, t_so_long *mypath);
 void	ft_currentfield(int iheight, int jwidth, t_so_long *mygame);
+void	ft_currentfield_down(int x, int y, t_so_long *mypath);
+void	ft_currentfield_right(int x, int y, t_so_long *mypath);
+void	ft_currentfield_left(int x, int y, t_so_long *mypath);
 
 //dealing with errors
 void	ft_errors(t_so_long *mygame);

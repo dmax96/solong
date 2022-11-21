@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/18 11:43:32 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:15:41 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_a(t_so_long *mygame)
 				ft_paintpath(jwidth, iheight, mygame);
 			mygame->myplayer.horizontal--;
 			ft_updatemap(jwidth, iheight, mygame);
-			ft_currentfield(jwidth, iheight, mygame);
+			ft_currentfield_left(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight][jwidth - 1] == 'E')
@@ -88,7 +88,7 @@ void	ft_s(t_so_long *mygame)
 				ft_paintpath(jwidth, iheight, mygame);
 			mygame->myplayer.vertical++;
 			ft_updatemap(jwidth, iheight, mygame);
-			ft_currentfield(jwidth, iheight, mygame);
+			ft_currentfield_down(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight + 1][jwidth] == 'E')
@@ -115,7 +115,7 @@ void	ft_d(t_so_long *mygame)
 				ft_paintpath(jwidth, iheight, mygame);
 			mygame->myplayer.horizontal++;
 			ft_updatemap(jwidth, iheight, mygame);
-			ft_currentfield(jwidth, iheight, mygame);
+			ft_currentfield_right(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight][jwidth + 1] == 'E')

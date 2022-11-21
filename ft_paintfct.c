@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_paintfct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 14:34:19 by jzhou             #+#    #+#             */
-/*   Updated: 2021/08/29 14:24:12 by jzhou            ###   ########.fr       */
+/*   Updated: 2022/11/21 15:01:24 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	ft_paintwall(int x, int y, t_so_long *mywall)
 		x * 100, y * 100);
 }
 
-void	ft_paintplayer(int x, int y, t_so_long *myplayerimg)
+void	ft_paintplayer_up(int x, int y, t_so_long *myplayerimg)
 {
 	mlx_put_image_to_window(myplayerimg->mlx, myplayerimg->window,
-		myplayerimg->player, x * 100, y * 100);
+		myplayerimg->playerup, x * 100, y * 100);
 }
 
 void	ft_paint_collect(int x, int y, t_so_long *mycollect)
@@ -40,4 +40,22 @@ void	ft_paintexit(int x, int y, t_so_long *myexitus)
 {
 	mlx_put_image_to_window(myexitus->mlx, myexitus->window, myexitus->exitus,
 		x * 100, y * 100);
+}
+
+void	ft_paintplayer_left(int x, int y, t_so_long *myplayerimg)
+{
+	mlx_put_image_to_window(myplayerimg->mlx, myplayerimg->window,
+		myplayerimg->playerleft, x * 100, y * 100);
+}
+
+void	ft_paintplayer_right(int x, int y, t_so_long *myplayerimg)
+{
+	mlx_put_image_to_window(myplayerimg->mlx, myplayerimg->window,
+		myplayerimg->playerright, x * 100, y * 100);
+}
+
+void	ft_paintplayer_down(int x, int y, t_so_long *myplayerimg)
+{
+	mlx_put_image_to_window(myplayerimg->mlx, myplayerimg->window,
+		myplayerimg->playerdown, x * 100, y * 100);
 }
