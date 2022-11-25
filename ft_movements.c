@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/25 12:09:46 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:47:58 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,14 @@ void	ft_w(t_so_long *mygame)
 	if (iheight - 1 != 0)
 	{
 		if (mygame->map.map[iheight - 1][jwidth] == '0'
-			|| mygame->map.map[iheight - 1][jwidth] == 'C'
-			|| mygame->map.map[iheight - 1][jwidth] == '1')
+			|| mygame->map.map[iheight - 1][jwidth] == 'C')
 		{
-			if (mygame->map.map[iheight - 1][jwidth] == 'C' ||
-			mygame->map.map[iheight - 1][jwidth] == '1' )
+			if (mygame->map.map[iheight - 1][jwidth] == 'C')
 			{
+				ft_countcol(mygame);
+				ft_paintpath(jwidth, iheight - 1, mygame);
 				ft_updatemap(jwidth, iheight, mygame);
 				ft_currentfield(jwidth, iheight, mygame);
-				if (mygame->map.map[iheight - 1][jwidth] == 'C')
-					ft_countcol(mygame);
-				ft_paintpath(jwidth, iheight - 1, mygame);
 				mygame->map.map[iheight - 1][jwidth] = '0';
 				return ;
 			}
@@ -44,7 +41,7 @@ void	ft_w(t_so_long *mygame)
 		}
 		else if (mygame->map.map[iheight - 1][jwidth] == 'E')
 		{
-			ft_check_w(mygame, iheight, jwidth);
+			ft_checkcol(mygame);
 		}
 	}
 }
@@ -59,27 +56,24 @@ void	ft_a(t_so_long *mygame)
 	if (jwidth - 1 != 0)
 	{
 		if (mygame->map.map[iheight][jwidth - 1] == '0'
-			|| mygame->map.map[iheight][jwidth - 1] == 'C'
-			|| mygame->map.map[iheight][jwidth - 1] == '1')
+			|| mygame->map.map[iheight][jwidth - 1] == 'C')
 		{
-			if (mygame->map.map[iheight][jwidth - 1] == 'C' ||
-			mygame->map.map[iheight][jwidth - 1] == '1' )
+			if (mygame->map.map[iheight][jwidth - 1] == 'C')
 			{
+				ft_countcol(mygame);
+				ft_paintpath(jwidth - 1, iheight, mygame);
 				ft_updatemap(jwidth, iheight, mygame);
 				ft_currentfield_left(jwidth, iheight, mygame);
-				if (mygame->map.map[iheight][jwidth - 1] == 'C')
-					ft_countcol(mygame);
-				ft_paintpath(jwidth - 1, iheight, mygame);
 				mygame->map.map[iheight][jwidth - 1] = '0';
 				return ;
-			}	
+			}
 			mygame->myplayer.horizontal--;
 			ft_updatemap(jwidth, iheight, mygame);
 			ft_currentfield_left(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight][jwidth - 1] == 'E')
-			ft_check_a(mygame, iheight, jwidth);
+			ft_checkcol(mygame);
 	}
 }
 
@@ -93,17 +87,14 @@ void	ft_s(t_so_long *mygame)
 	if (iheight + 1 != mygame->img_height - 1)
 	{
 		if (mygame->map.map[iheight + 1][jwidth] == '0'
-			|| mygame->map.map[iheight + 1][jwidth] == 'C'
-			|| mygame->map.map[iheight + 1][jwidth] == '1')
+			|| mygame->map.map[iheight + 1][jwidth] == 'C')
 		{
-			if (mygame->map.map[iheight + 1][jwidth] == 'C' ||
-			mygame->map.map[iheight + 1][jwidth] == '1')
+			if (mygame->map.map[iheight + 1][jwidth] == 'C')
 			{
+				ft_countcol(mygame);
+				ft_paintpath(jwidth, iheight + 1, mygame);
 				ft_updatemap(jwidth, iheight, mygame);
 				ft_currentfield_down(jwidth, iheight, mygame);
-				if (mygame->map.map[iheight + 1][jwidth] == 'C')
-					ft_countcol(mygame);
-				ft_paintpath(jwidth, iheight + 1, mygame);
 				mygame->map.map[iheight + 1][jwidth] = '0';
 				return ;
 			}
@@ -113,7 +104,7 @@ void	ft_s(t_so_long *mygame)
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight + 1][jwidth] == 'E')
-			ft_check_s(mygame, iheight, jwidth);
+			ft_checkcol(mygame);
 	}
 }
 
@@ -127,19 +118,13 @@ void	ft_d(t_so_long *mygame)
 	if (jwidth + 1 != mygame->img_width - 1)
 	{
 		if (mygame->map.map[iheight][jwidth + 1] == '0'
-			|| mygame->map.map[iheight][jwidth + 1] == 'C'
-			|| mygame->map.map[iheight][jwidth + 1] == '1'
-			|| mygame->map.map[iheight][jwidth] == 'E')
+			|| mygame->map.map[iheight][jwidth + 1] == 'C')
 		{
-			if (mygame->map.map[iheight][jwidth + 1] == 'C' ||
-			mygame->map.map[iheight][jwidth + 1] == '1')
+			if (mygame->map.map[iheight][jwidth + 1] == 'C')
 			{
-				ft_paintpath(jwidth, iheight, mygame);
-				ft_updatemap(jwidth, iheight, mygame);
-				ft_currentfield_right(jwidth, iheight, mygame);
-				if (mygame->map.map[iheight][jwidth + 1] == 'C')
-					ft_countcol(mygame);
+				ft_countcol(mygame);
 				ft_paintpath(jwidth + 1, iheight, mygame);
+				ft_currentfield_right(jwidth, iheight, mygame);
 				mygame->map.map[iheight][jwidth + 1] = '0';
 				return ;
 			}
@@ -149,7 +134,7 @@ void	ft_d(t_so_long *mygame)
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight][jwidth + 1] == 'E')
-			ft_check_d(mygame, iheight, jwidth);
+			ft_checkcol(mygame);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 13:58:18 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/25 12:00:23 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:43:19 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,40 +19,34 @@ int	ft_exitgame(void)
 
 void	ft_check_w(t_so_long *mygame, int iheight, int jwidth)
 {
-	mygame->myplayer.vertical--;
-	ft_updatemap(jwidth, iheight, mygame);
+	ft_countcol(mygame);
+	ft_paintpath(jwidth, iheight - 1, mygame);
 	ft_currentfield(jwidth, iheight, mygame);
-	ft_checkcol(mygame);
-	mygame->steps++;
-	printf("Steps taken: %d\n", mygame->steps);
+	mygame->map.map[iheight - 1][jwidth] = '0';
 }
 
 void	ft_check_s(t_so_long *mygame, int iheight, int jwidth)
 {
-	mygame->myplayer.vertical++;
+	ft_countcol(mygame);
+	ft_paintpath(jwidth, iheight + 1, mygame);
 	ft_updatemap(jwidth, iheight, mygame);
 	ft_currentfield_down(jwidth, iheight, mygame);
-	ft_checkcol(mygame);
-	mygame->steps++;
-	printf("Steps taken: %d\n", mygame->steps);
+	mygame->map.map[iheight + 1][jwidth] = '0';
 }
 
 void	ft_check_a(t_so_long *mygame, int iheight, int jwidth)
 {
-	mygame->myplayer.horizontal--;
+	ft_countcol(mygame);
+	ft_paintpath(jwidth - 1, iheight, mygame);
 	ft_updatemap(jwidth, iheight, mygame);
 	ft_currentfield_left(jwidth, iheight, mygame);
-	ft_checkcol(mygame);
-	mygame->steps++;
-	printf("Steps taken: %d\n", mygame->steps);
+	mygame->map.map[iheight][jwidth - 1] = '0';
 }
 
 void	ft_check_d(t_so_long *mygame, int iheight, int jwidth)
 {
-	mygame->myplayer.horizontal++;
-	ft_updatemap(jwidth, iheight, mygame);
+	ft_countcol(mygame);
+	ft_paintpath(jwidth + 1, iheight, mygame);
 	ft_currentfield_right(jwidth, iheight, mygame);
-	ft_checkcol(mygame);
-	mygame->steps++;
-	printf("Steps taken: %d\n", mygame->steps);
+	mygame->map.map[iheight][jwidth + 1] = '0';
 }
