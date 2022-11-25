@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/21 15:15:41 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/25 12:09:46 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,17 @@ void	ft_w(t_so_long *mygame)
 			|| mygame->map.map[iheight - 1][jwidth] == 'C'
 			|| mygame->map.map[iheight - 1][jwidth] == '1')
 		{
-			if (mygame->map.map[iheight - 1][jwidth] == 'C')
-				ft_countcol(mygame);
-			else if (mygame->map.map[iheight - 1][jwidth] == '1')
-				ft_paintpath(jwidth, iheight, mygame);
+			if (mygame->map.map[iheight - 1][jwidth] == 'C' ||
+			mygame->map.map[iheight - 1][jwidth] == '1' )
+			{
+				ft_updatemap(jwidth, iheight, mygame);
+				ft_currentfield(jwidth, iheight, mygame);
+				if (mygame->map.map[iheight - 1][jwidth] == 'C')
+					ft_countcol(mygame);
+				ft_paintpath(jwidth, iheight - 1, mygame);
+				mygame->map.map[iheight - 1][jwidth] = '0';
+				return ;
+			}
 			mygame->myplayer.vertical--;
 			ft_updatemap(jwidth, iheight, mygame);
 			ft_currentfield(jwidth, iheight, mygame);
@@ -55,10 +62,17 @@ void	ft_a(t_so_long *mygame)
 			|| mygame->map.map[iheight][jwidth - 1] == 'C'
 			|| mygame->map.map[iheight][jwidth - 1] == '1')
 		{
-			if (mygame->map.map[iheight][jwidth - 1] == 'C')
-				ft_countcol(mygame);
-			else if (mygame->map.map[iheight][jwidth - 1] == '1')
-				ft_paintpath(jwidth, iheight, mygame);
+			if (mygame->map.map[iheight][jwidth - 1] == 'C' ||
+			mygame->map.map[iheight][jwidth - 1] == '1' )
+			{
+				ft_updatemap(jwidth, iheight, mygame);
+				ft_currentfield_left(jwidth, iheight, mygame);
+				if (mygame->map.map[iheight][jwidth - 1] == 'C')
+					ft_countcol(mygame);
+				ft_paintpath(jwidth - 1, iheight, mygame);
+				mygame->map.map[iheight][jwidth - 1] = '0';
+				return ;
+			}	
 			mygame->myplayer.horizontal--;
 			ft_updatemap(jwidth, iheight, mygame);
 			ft_currentfield_left(jwidth, iheight, mygame);
@@ -82,10 +96,17 @@ void	ft_s(t_so_long *mygame)
 			|| mygame->map.map[iheight + 1][jwidth] == 'C'
 			|| mygame->map.map[iheight + 1][jwidth] == '1')
 		{
-			if (mygame->map.map[iheight + 1][jwidth] == 'C')
-				ft_countcol(mygame);
-			else if (mygame->map.map[iheight + 1][jwidth] == '1')
-				ft_paintpath(jwidth, iheight, mygame);
+			if (mygame->map.map[iheight + 1][jwidth] == 'C' ||
+			mygame->map.map[iheight + 1][jwidth] == '1')
+			{
+				ft_updatemap(jwidth, iheight, mygame);
+				ft_currentfield_down(jwidth, iheight, mygame);
+				if (mygame->map.map[iheight + 1][jwidth] == 'C')
+					ft_countcol(mygame);
+				ft_paintpath(jwidth, iheight + 1, mygame);
+				mygame->map.map[iheight + 1][jwidth] = '0';
+				return ;
+			}
 			mygame->myplayer.vertical++;
 			ft_updatemap(jwidth, iheight, mygame);
 			ft_currentfield_down(jwidth, iheight, mygame);
@@ -107,12 +128,21 @@ void	ft_d(t_so_long *mygame)
 	{
 		if (mygame->map.map[iheight][jwidth + 1] == '0'
 			|| mygame->map.map[iheight][jwidth + 1] == 'C'
-			|| mygame->map.map[iheight][jwidth + 1] == '1')
+			|| mygame->map.map[iheight][jwidth + 1] == '1'
+			|| mygame->map.map[iheight][jwidth] == 'E')
 		{
-			if (mygame->map.map[iheight][jwidth + 1] == 'C')
-				ft_countcol(mygame);
-			else if (mygame->map.map[iheight][jwidth + 1] == '1')
+			if (mygame->map.map[iheight][jwidth + 1] == 'C' ||
+			mygame->map.map[iheight][jwidth + 1] == '1')
+			{
 				ft_paintpath(jwidth, iheight, mygame);
+				ft_updatemap(jwidth, iheight, mygame);
+				ft_currentfield_right(jwidth, iheight, mygame);
+				if (mygame->map.map[iheight][jwidth + 1] == 'C')
+					ft_countcol(mygame);
+				ft_paintpath(jwidth + 1, iheight, mygame);
+				mygame->map.map[iheight][jwidth + 1] = '0';
+				return ;
+			}
 			mygame->myplayer.horizontal++;
 			ft_updatemap(jwidth, iheight, mygame);
 			ft_currentfield_right(jwidth, iheight, mygame);
