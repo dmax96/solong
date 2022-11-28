@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/25 14:47:58 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:17:21 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,16 @@ void	ft_w(t_so_long *mygame)
 			{
 				ft_countcol(mygame);
 				ft_paintpath(jwidth, iheight - 1, mygame);
-				ft_updatemap(jwidth, iheight, mygame);
-				ft_currentfield(jwidth, iheight, mygame);
+				ft_update_w(jwidth, iheight, mygame);
 				mygame->map.map[iheight - 1][jwidth] = '0';
 				return ;
 			}
 			mygame->myplayer.vertical--;
-			ft_updatemap(jwidth, iheight, mygame);
-			ft_currentfield(jwidth, iheight, mygame);
+			ft_update_w(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight - 1][jwidth] == 'E')
-		{
 			ft_checkcol(mygame);
-		}
 	}
 }
 
@@ -62,14 +58,12 @@ void	ft_a(t_so_long *mygame)
 			{
 				ft_countcol(mygame);
 				ft_paintpath(jwidth - 1, iheight, mygame);
-				ft_updatemap(jwidth, iheight, mygame);
-				ft_currentfield_left(jwidth, iheight, mygame);
+				ft_update_a(jwidth, iheight, mygame);
 				mygame->map.map[iheight][jwidth - 1] = '0';
 				return ;
 			}
 			mygame->myplayer.horizontal--;
-			ft_updatemap(jwidth, iheight, mygame);
-			ft_currentfield_left(jwidth, iheight, mygame);
+			ft_update_a(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight][jwidth - 1] == 'E')
@@ -93,14 +87,12 @@ void	ft_s(t_so_long *mygame)
 			{
 				ft_countcol(mygame);
 				ft_paintpath(jwidth, iheight + 1, mygame);
-				ft_updatemap(jwidth, iheight, mygame);
-				ft_currentfield_down(jwidth, iheight, mygame);
+				ft_update_s(jwidth, iheight, mygame);
 				mygame->map.map[iheight + 1][jwidth] = '0';
 				return ;
 			}
 			mygame->myplayer.vertical++;
-			ft_updatemap(jwidth, iheight, mygame);
-			ft_currentfield_down(jwidth, iheight, mygame);
+			ft_update_s(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight + 1][jwidth] == 'E')
@@ -124,13 +116,12 @@ void	ft_d(t_so_long *mygame)
 			{
 				ft_countcol(mygame);
 				ft_paintpath(jwidth + 1, iheight, mygame);
-				ft_currentfield_right(jwidth, iheight, mygame);
+				ft_update_d(jwidth, iheight, mygame);
 				mygame->map.map[iheight][jwidth + 1] = '0';
 				return ;
 			}
 			mygame->myplayer.horizontal++;
-			ft_updatemap(jwidth, iheight, mygame);
-			ft_currentfield_right(jwidth, iheight, mygame);
+			ft_update_d(jwidth, iheight, mygame);
 			ft_count_step(mygame);
 		}
 		else if (mygame->map.map[iheight][jwidth + 1] == 'E')

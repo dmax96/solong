@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:58 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/21 15:12:08 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:19:26 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,4 +138,9 @@ void	ft_readmap(t_so_long *mygame, char **argv);
 void	ft_map_base(t_so_long *mygame);
 void	ft_paintmap(t_so_long *mygame);
 
+//update.c
+void	ft_update_w(int jwidth, int iheight, t_so_long *mygame);
+void	ft_update_a(int jwidth, int iheight, t_so_long *mygame);
+void	ft_update_s(int jwidth, int iheight, t_so_long *mygame);
+void	ft_update_d(int jwidth, int iheight, t_so_long *mygame);
 #endif

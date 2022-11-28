@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_collectexit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:50:07 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/18 11:26:12 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:23:44 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,18 @@ void	ft_count_step(t_so_long *mygame)
 {
 	mygame->steps++;
 	printf("Steps taken: %d\n", mygame->steps);
+}
+
+void	ft_show_step(t_so_long *mygame)
+{
+	char	*putsteps;
+	int		steps_width;
+	int		steps_height;
+
+	steps_width = 50;
+	steps_height = 50;
+	putsteps = ft_itoa(mygame->steps);
+	mlx_string_put(mygame->mlx, mygame->window, steps_width, steps_height, 24573, putsteps);
 }
 
 int	ft_checkmap_p(t_so_long *mygame)
