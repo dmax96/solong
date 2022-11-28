@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:46:05 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/11/21 14:53:01 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:56:54 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	ft_currentfield_right(int x, int y, t_so_long *mypath)
 		ft_paintplayer_right(x_next, y_next, mypath);
 	}
 }
+
 void	ft_currentfield_down(int x, int y, t_so_long *mypath)
 {
 	int	y_next;

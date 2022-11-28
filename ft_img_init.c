@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:41:59 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/21 15:25:06 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:58:04 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ft_init_img(t_so_long *mygame)
 	mygame->exitus = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_exi,
 			&mygame->i, &mygame->j);
 	mygame->rel_path_plydown = "./assets/Player1_down.xpm";
-	mygame->playerdown = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_plydown,
-			&mygame->i, &mygame->j);
+	mygame->playerdown = mlx_xpm_file_to_image(mygame->mlx,
+			mygame->rel_path_plydown, &mygame->i, &mygame->j);
 	mygame->rel_path_plyleft = "./assets/Player1_left.xpm";
-	mygame->playerleft = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_plyleft,
-			&mygame->i, &mygame->j);
+	mygame->playerleft = mlx_xpm_file_to_image(mygame->mlx,
+			mygame->rel_path_plyleft, &mygame->i, &mygame->j);
 	mygame->rel_path_plyright = "./assets/Player1_right.xpm";
-	mygame->playerright = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_plyright,
-			&mygame->i, &mygame->j);				
+	mygame->playerright = mlx_xpm_file_to_image(mygame->mlx,
+			mygame->rel_path_plyright, &mygame->i, &mygame->j);
 }
 
 void	ft_setplayer(int jwidth, int iheight, t_so_long *mygame)

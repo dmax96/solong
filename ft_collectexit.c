@@ -6,7 +6,7 @@
 /*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:50:07 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/28 11:23:44 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:46:26 by vbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,16 @@ void	ft_checkcol(t_so_long *mygame)
 
 void	ft_count_step(t_so_long *mygame)
 {
+	char	*putsteps;
+	int		steps_width;
+	int		steps_height;
+
 	mygame->steps++;
 	printf("Steps taken: %d\n", mygame->steps);
+	steps_width = 50;
+	steps_height = 50;
+	putsteps = ft_itoa(mygame->steps);
+	mlx_string_put(mygame->mlx, mygame->window, steps_width, steps_height, 24573, putsteps);
 }
 
 void	ft_show_step(t_so_long *mygame)
