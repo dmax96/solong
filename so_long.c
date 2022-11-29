@@ -6,7 +6,7 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:24:16 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 16:33:01 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ft_map_base(t_so_long *mygame)
 	{
 		while (jwidth < mygame->img_width)
 		{
-			ft_paintpath(jwidth, iheight, mygame);
+			putpath(jwidth, iheight, mygame);
 			jwidth++;
 		}
 		iheight++;
@@ -75,7 +75,7 @@ void	ft_map_base(t_so_long *mygame)
 	}
 }
 
-void	ft_paintmap(t_so_long *mygame)
+void	putmap(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -87,13 +87,13 @@ void	ft_paintmap(t_so_long *mygame)
 		while (jwidth < mygame->img_width)
 		{
 			if (mygame->map.map[iheight][jwidth] == '1')
-				ft_paintwall(jwidth, iheight, mygame);
+				putwall(jwidth, iheight, mygame);
 			else if (mygame->map.map[iheight][jwidth] == 'P')
 				putplayer(jwidth, iheight, mygame);
 			else if (mygame->map.map[iheight][jwidth] == 'C')
 				putcollect(jwidth, iheight, mygame);
 			else if (mygame->map.map[iheight][jwidth] == 'E')
-				ft_paintexit(jwidth, iheight, mygame);
+				putexit(jwidth, iheight, mygame);
 			jwidth++;
 		}
 		iheight++;
@@ -115,8 +115,8 @@ int	main(int argc, char **argv)
 	ft_errors(&mygame);
 	ft_load_img(&mygame);
 	ft_map_base(&mygame);
-	ft_paintmap(&mygame);
-	mlx_hook(mygame.window, 2, (1L << 0), ft_playermove, &mygame);
+	putmap(&mygame);
+	mlx_hook(mygame.window, 2, (1L << 0), playermove, &mygame);
 	mlx_hook(mygame.window, 17, (1L << 17), ft_exitgame, &mygame);
 	mlx_loop(mygame.mlx);
 	return (0);

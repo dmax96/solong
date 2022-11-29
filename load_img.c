@@ -6,7 +6,7 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:41:59 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 16:31:29 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	putplayer(int jwidth, int iheight, t_so_long *mygame)
 {
 	mygame->myplayer.horizontal = jwidth;
 	mygame->myplayer.vertical = iheight;
-	ft_paintplayer_down(jwidth, iheight, mygame);
+	putplayer_down(jwidth, iheight, mygame);
 }
 
 void	putcollect(int jwidth, int iheight, t_so_long *mygame)
 {
 	mygame->colsum++;
 	mygame->collectible++;
-	ft_paint_collect(jwidth, iheight, mygame);
+	put_collect(jwidth, iheight, mygame);
 }
