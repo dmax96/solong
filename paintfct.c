@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_paintfct.c                                      :+:      :+:    :+:   */
+/*   paintfct.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 14:34:19 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/21 15:01:24 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_game.h"
+#include "game.h"
 
 void	ft_paintpath(int x, int y, t_so_long *mypath)
 {

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_img_init.c                                      :+:      :+:    :+:   */
+/*   load_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:41:59 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/28 11:58:04 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_game.h"
+#include "game.h"
 
-void	ft_init_img(t_so_long *mygame)
+void	ft_load_img(t_so_long *mygame)
 {
 	mygame->rel_path_path = "./assets/background_stars.xpm";
 	mygame->path = mlx_xpm_file_to_image(mygame->mlx, mygame->rel_path_path,
@@ -40,14 +40,14 @@ void	ft_init_img(t_so_long *mygame)
 			mygame->rel_path_plyright, &mygame->i, &mygame->j);
 }
 
-void	ft_setplayer(int jwidth, int iheight, t_so_long *mygame)
+void	putplayer(int jwidth, int iheight, t_so_long *mygame)
 {
 	mygame->myplayer.horizontal = jwidth;
 	mygame->myplayer.vertical = iheight;
 	ft_paintplayer_down(jwidth, iheight, mygame);
 }
 
-void	ft_setcollect(int jwidth, int iheight, t_so_long *mygame)
+void	putcollect(int jwidth, int iheight, t_so_long *mygame)
 {
 	mygame->colsum++;
 	mygame->collectible++;

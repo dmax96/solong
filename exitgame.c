@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exitgame.c                                      :+:      :+:    :+:   */
+/*   exitgame.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 13:58:18 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/25 14:43:19 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_game.h"
+#include "game.h"
 
 int	ft_exitgame(void)
 {

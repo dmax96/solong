@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_collectexit.c                                   :+:      :+:    :+:   */
+/*   collectexit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:50:07 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/28 11:46:26 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_game.h"
+#include "game.h"
 
 void	ft_countcol(t_so_long *mygame)
 {

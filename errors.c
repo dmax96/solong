@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_errors.c                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:45 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/18 11:26:56 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_game.h"
+#include "game.h"
 
 int	ft_checkmap_lu(t_so_long *mygame)
 {
@@ -119,7 +119,7 @@ void	ft_errors(t_so_long *mygame)
 		|| ft_checksquare(mygame) == -1 || ft_checkmap_p(mygame) == -1)
 	{
 		printf("Error\n");
-		printf("There are inconsistencies in your map!");
+		printf("Your map is wrong! (scemo)");
 		exit (0);
 	}
 }

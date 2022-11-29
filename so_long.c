@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:24:16 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/17 14:25:34 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "ft_game.h"
+#include "game.h"
 
 int	count_mapunit(char **argv)
 {
@@ -89,9 +89,9 @@ void	ft_paintmap(t_so_long *mygame)
 			if (mygame->map.map[iheight][jwidth] == '1')
 				ft_paintwall(jwidth, iheight, mygame);
 			else if (mygame->map.map[iheight][jwidth] == 'P')
-				ft_setplayer(jwidth, iheight, mygame);
+				putplayer(jwidth, iheight, mygame);
 			else if (mygame->map.map[iheight][jwidth] == 'C')
-				ft_setcollect(jwidth, iheight, mygame);
+				putcollect(jwidth, iheight, mygame);
 			else if (mygame->map.map[iheight][jwidth] == 'E')
 				ft_paintexit(jwidth, iheight, mygame);
 			jwidth++;
@@ -113,7 +113,7 @@ int	main(int argc, char **argv)
 	mygame.window = mlx_new_window(mygame.mlx, (mygame.img_width * 100),
 			(mygame.img_height * 100), "so_long");
 	ft_errors(&mygame);
-	ft_init_img(&mygame);
+	ft_load_img(&mygame);
 	ft_map_base(&mygame);
 	ft_paintmap(&mygame);
 	mlx_hook(mygame.window, 2, (1L << 0), ft_playermove, &mygame);

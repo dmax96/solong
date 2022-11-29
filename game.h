@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_game.h                                          :+:      :+:    :+:   */
+/*   game.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vbellucc <vbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:58 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/28 11:19:26 by vbellucc         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:19:39 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,9 @@ typedef struct s_so_long
 
 }	t_so_long;
 
-//initializing the pictures
-void	ft_init_img(t_so_long *mygame);
-//setting the player coordinates
-void	ft_setplayer(int jwidth, int iheight, t_so_long *mygame);
-//setting and counting up the collectibles
-void	ft_setcollect(int jwidth, int iheight, t_so_long *mygame);
-
-//paiting functions
+void	ft_load_img(t_so_long *mygame);
+void	putplayer(int jwidth, int iheight, t_so_long *mygame);
+void	putcollect(int jwidth, int iheight, t_so_long *mygame);
 void	ft_paintwall(int x, int y, t_so_long *wall);
 void	ft_paintpath(int x, int y, t_so_long *path);
 void	ft_paintplayer_up(int x, int y, t_so_long *playerimg);
@@ -96,22 +91,16 @@ void	ft_paintexit(int x, int y, t_so_long *exitus);
 void	ft_paintplayer_down(int x, int y, t_so_long *playerimg);
 void	ft_paintplayer_left(int x, int y, t_so_long *playerimg);
 void	ft_paintplayer_right(int x, int y, t_so_long *playerimg);
-
-//for moving the player around
 int		ft_playermove(int keycode, t_so_long *mygame);
 void	ft_d(t_so_long *mygame);
 void	ft_d(t_so_long *mygame);
 void	ft_d(t_so_long *mygame);
 void	ft_d(t_so_long *mygame);
-
-//for updatiing the map
 void	ft_updatemap(int x, int y, t_so_long *mypath);
 void	ft_currentfield(int iheight, int jwidth, t_so_long *mygame);
 void	ft_currentfield_down(int x, int y, t_so_long *mypath);
 void	ft_currentfield_right(int x, int y, t_so_long *mypath);
 void	ft_currentfield_left(int x, int y, t_so_long *mypath);
-
-//dealing with errors
 void	ft_errors(t_so_long *mygame);
 int		ft_checkmap_lu(t_so_long *mygame);
 int		ft_checkmap_rd(t_so_long *mygame);
@@ -119,26 +108,18 @@ int		ft_checkmap_in(t_so_long *mygame);
 int		ft_checkmin(t_so_long *mygame);
 int		ft_checksquare(t_so_long *mygame);
 int		ft_checkmap_p(t_so_long *mygame);
-
-//exit game
 int		ft_exitgame(void);
 void	ft_check_w(t_so_long *mygame, int iheight, int jwidth);
 void	ft_check_s(t_so_long *mygame, int iheight, int jwidth);
 void	ft_check_a(t_so_long *mygame, int iheight, int jwidth);
 void	ft_check_d(t_so_long *mygame, int iheight, int jwidth);
 void	ft_count_step(t_so_long *mygame);
-
-//counting the collectible
 void	ft_countcol(t_so_long *mygame);
 void	ft_checkcol(t_so_long *mygame);
-
-//so_long main
 int		count_mapunit(char **argv);
 void	ft_readmap(t_so_long *mygame, char **argv);
 void	ft_map_base(t_so_long *mygame);
 void	ft_paintmap(t_so_long *mygame);
-
-//update.c
 void	ft_update_w(int jwidth, int iheight, t_so_long *mygame);
 void	ft_update_a(int jwidth, int iheight, t_so_long *mygame);
 void	ft_update_s(int jwidth, int iheight, t_so_long *mygame);

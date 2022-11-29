@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:58:28 by jzhou             #+#    #+#             */
-/*   Updated: 2021/08/23 16:08:24 by jzhou            ###   ########.fr       */
+/*   Updated: 2022/11/29 16:16:40 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static char	*ft_check_ifn(char **readbuffer)
 	return (NULL);
 }
 
-static int	ft_init_read(int fd, char *buff, char **readbuffer)
+static int	ft_load_read(int fd, char *buff, char **readbuffer)
 {
 	int	bytesread;
 
@@ -117,7 +117,7 @@ char	*get_next_line(int fd)
 			if (line != NULL)
 				return (line);
 		}
-		bytesread = ft_init_read(fd, buff, &readbuffer[fd]);
+		bytesread = ft_load_read(fd, buff, &readbuffer[fd]);
 		if (bytesread == -1 || fd < 0)
 			return (NULL);
 		line = ft_rearrange_b(buff, &readbuffer[fd], bytesread);
