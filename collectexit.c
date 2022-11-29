@@ -6,7 +6,7 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:50:07 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:08:57 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_show_step(t_so_long *mygame)
 	mlx_string_put(mygame->mlx, mygame->window, steps_width, steps_height, 24573, putsteps);
 }
 
-int	ft_checkmap_p(t_so_long *mygame)
+/*int	ft_checkmap_p(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -78,4 +78,4 @@ int	ft_checkmap_p(t_so_long *mygame)
 		return (-1);
 	}
 	return (0);
-}
+}*/

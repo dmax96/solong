@@ -6,14 +6,14 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:33:01 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 16:46:29 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <stdio.h>
 
-void	ft_w(t_so_long *mygame)
+void	ft_up(t_so_long *mygame)
 {
 	int		iheight;
 	int		jwidth;
@@ -42,7 +42,7 @@ void	ft_w(t_so_long *mygame)
 	}
 }
 
-void	ft_a(t_so_long *mygame)
+void	ft_left(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -71,7 +71,7 @@ void	ft_a(t_so_long *mygame)
 	}
 }
 
-void	ft_s(t_so_long *mygame)
+void	ft_down(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -100,7 +100,7 @@ void	ft_s(t_so_long *mygame)
 	}
 }
 
-void	ft_d(t_so_long *mygame)
+void	ft_right(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -132,13 +132,13 @@ void	ft_d(t_so_long *mygame)
 int	playermove(int keycode, t_so_long *mygame)
 {
 	if (keycode == 13)
-		ft_w(mygame);
+		ft_up(mygame);
 	if (keycode == 0)
-		ft_a(mygame);
+		ft_left(mygame);
 	if (keycode == 1)
-		ft_s(mygame);
+		ft_down(mygame);
 	if (keycode == 2)
-		ft_d(mygame);
+		ft_right(mygame);
 	if (keycode == 53)
 		ft_exitgame();
 	return (0);

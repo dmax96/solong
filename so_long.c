@@ -6,7 +6,7 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:24:16 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:33:01 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 16:55:36 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int	main(int argc, char **argv)
 	mygame.mlx = mlx_init();
 	mygame.window = mlx_new_window(mygame.mlx, (mygame.img_width * 100),
 			(mygame.img_height * 100), "so_long");
-	ft_errors(&mygame);
+	errors(&mygame);
 	ft_load_img(&mygame);
 	ft_map_base(&mygame);
 	putmap(&mygame);

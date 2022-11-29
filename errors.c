@@ -6,13 +6,13 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:45 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:23:28 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:09:12 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
-int	ft_checkmap_lu(t_so_long *mygame)
+int	checkwall(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -36,7 +36,7 @@ int	ft_checkmap_lu(t_so_long *mygame)
 	return (0);
 }
 
-int	ft_checkmap_rd(t_so_long *mygame)
+int	checkwall2(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -60,7 +60,7 @@ int	ft_checkmap_rd(t_so_long *mygame)
 	return (0);
 }
 
-int	ft_checkmap_in(t_so_long *mygame)
+int	checkletters(t_so_long *mygame)
 {
 	int		iheight;
 	int		jwidth;
@@ -83,7 +83,7 @@ int	ft_checkmap_in(t_so_long *mygame)
 	return (0);
 }
 
-int	ft_checkmin(t_so_long *mygame)
+int	checkmaparameters(t_so_long *mygame)
 {
 	int	iheight;
 	int	jwidth;
@@ -105,18 +105,18 @@ int	ft_checkmin(t_so_long *mygame)
 		iheight++;
 		jwidth = 0;
 	}
-	if (mygame->maperrors.plycount < 1 || mygame->maperrors.colcount < 1
+	if (mygame->maperrors.plycount != 1 || mygame->maperrors.colcount < 1
 		|| mygame->maperrors.extcount < 1)
 		return (-1);
 	else
 		return (0);
 }
 
-void	ft_errors(t_so_long *mygame)
+void	errors(t_so_long *mygame)
 {
-	if (ft_checkmap_lu(mygame) == -1 || ft_checkmap_rd(mygame) == -1
-		|| ft_checkmap_in(mygame) == -1 || ft_checkmin(mygame) == -1
-		|| ft_checksquare(mygame) == -1 || ft_checkmap_p(mygame) == -1)
+	if (checkwall(mygame) == -1 || checkwall2(mygame) == -1
+		|| checkletters(mygame) == -1 || checkmaparameters(mygame) == -1
+		|| checksquare(mygame) == -1)
 	{
 		printf("Error\n");
 		printf("Your map is wrong! (scemo)");

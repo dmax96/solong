@@ -6,14 +6,14 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 12:39:21 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:31:29 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 16:54:36 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <stdio.h>
 
-void	ft_updatemap(int x, int y, t_so_long *mypath)
+void	updatemap(int x, int y, t_so_long *mypath)
 {
 	int	y_next;
 	int	x_next;
@@ -35,7 +35,7 @@ void	ft_updatemap(int x, int y, t_so_long *mypath)
 	}
 }
 
-void	ft_currentfield(int x, int y, t_so_long *mypath)
+void	updatefield(int x, int y, t_so_long *mypath)
 {
 	int	y_next;
 	int	x_next;

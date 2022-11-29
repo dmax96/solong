@@ -6,14 +6,14 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:46:05 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/11/29 16:31:29 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 16:54:36 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 #include <stdio.h>
 
-void	ft_currentfield_left(int x, int y, t_so_long *mypath)
+void	updatefield_left(int x, int y, t_so_long *mypath)
 {
 	int	y_next;
 	int	x_next;
@@ -37,7 +37,7 @@ void	ft_currentfield_left(int x, int y, t_so_long *mypath)
 	}
 }
 
-void	ft_currentfield_right(int x, int y, t_so_long *mypath)
+void	updatefield_right(int x, int y, t_so_long *mypath)
 {
 	int	y_next;
 	int	x_next;
@@ -61,7 +61,7 @@ void	ft_currentfield_right(int x, int y, t_so_long *mypath)
 	}
 }
 
-void	ft_currentfield_down(int x, int y, t_so_long *mypath)
+void	updatefield_down(int x, int y, t_so_long *mypath)
 {
 	int	y_next;
 	int	x_next;
