@@ -6,11 +6,11 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 19:15:47 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:06:17 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:26:38 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "so_long.h"
 
 int	checksquare(t_so_long *mygame)
 {

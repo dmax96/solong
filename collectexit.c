@@ -6,13 +6,13 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:50:07 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:08:57 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:28:01 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "so_long.h"
 
-void	ft_countcol(t_so_long *mygame)
+void	count_collectible(t_so_long *mygame)
 {
 	int	screencol;
 
@@ -20,7 +20,7 @@ void	ft_countcol(t_so_long *mygame)
 	screencol = mygame->colsum - mygame->collectible;
 }
 
-void	ft_checkcol(t_so_long *mygame)
+void	check_collectible(t_so_long *mygame)
 {
 	if (mygame->collectible == 0)
 	{
@@ -28,7 +28,7 @@ void	ft_checkcol(t_so_long *mygame)
 	}
 }
 
-void	ft_count_step(t_so_long *mygame)
+void	count_steps(t_so_long *mygame)
 {
 	char	*putsteps;
 	int		steps_width;
@@ -56,22 +56,22 @@ void	ft_show_step(t_so_long *mygame)
 
 /*int	ft_checkmap_p(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 	int	count;
 
 	count = 0;
-	iheight = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	while (height < mygame->img_height)
 	{
-		jwidth = 0;
-		while (jwidth < mygame->img_width)
+		width = 0;
+		while (width < mygame->img_width)
 		{
-			if (mygame->map.map[iheight][jwidth] == 'P')
+			if (mygame->map.map[height][width] == 'P')
 				count++;
-			jwidth++;
+			width++;
 		}
-		iheight++;
+		height++;
 	}
 	if (count > 1)
 	{

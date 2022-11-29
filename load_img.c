@@ -6,11 +6,11 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 17:41:59 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:31:29 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:28:01 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "so_long.h"
 
 void	ft_load_img(t_so_long *mygame)
 {
@@ -40,16 +40,16 @@ void	ft_load_img(t_so_long *mygame)
 			mygame->rel_path_plyright, &mygame->i, &mygame->j);
 }
 
-void	putplayer(int jwidth, int iheight, t_so_long *mygame)
+void	putplayer(int width, int height, t_so_long *mygame)
 {
-	mygame->myplayer.horizontal = jwidth;
-	mygame->myplayer.vertical = iheight;
-	putplayer_down(jwidth, iheight, mygame);
+	mygame->myplayer.horizontal = width;
+	mygame->myplayer.vertical = height;
+	putplayer_down(width, height, mygame);
 }
 
-void	putcollect(int jwidth, int iheight, t_so_long *mygame)
+void	putcollect(int width, int height, t_so_long *mygame)
 {
 	mygame->colsum++;
 	mygame->collectible++;
-	put_collect(jwidth, iheight, mygame);
+	put_collect(width, height, mygame);
 }

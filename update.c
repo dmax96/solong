@@ -6,33 +6,33 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:57:01 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/11/29 16:54:36 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:28:01 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "so_long.h"
 #include <stdio.h>
 
-void	ft_update_w(int jwidth, int iheight, t_so_long *mygame)
+void	update_w(int width, int height, t_so_long *mygame)
 {
-	updatemap(jwidth, iheight, mygame);
-	updatefield(jwidth, iheight, mygame);
+	updatemap(width, height, mygame);
+	updatefield(width, height, mygame);
 }
 
-void	ft_update_a(int jwidth, int iheight, t_so_long *mygame)
+void	update_a(int width, int height, t_so_long *mygame)
 {
-	updatemap(jwidth, iheight, mygame);
-	updatefield_left(jwidth, iheight, mygame);
+	updatemap(width, height, mygame);
+	updatefield_left(width, height, mygame);
 }
 
-void	ft_update_s(int jwidth, int iheight, t_so_long *mygame)
+void	update_s(int width, int height, t_so_long *mygame)
 {
-	updatemap(jwidth, iheight, mygame);
-	updatefield_down(jwidth, iheight, mygame);
+	updatemap(width, height, mygame);
+	updatefield_down(width, height, mygame);
 }
 
-void	ft_update_d(int jwidth, int iheight, t_so_long *mygame)
+void	update_d(int width, int height, t_so_long *mygame)
 {
-	updatemap(jwidth, iheight, mygame);
-	updatefield_right(jwidth, iheight, mygame);
+	updatemap(width, height, mygame);
+	updatefield_right(width, height, mygame);
 }

@@ -6,11 +6,11 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:46:05 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/11/29 16:54:36 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:26:38 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "so_long.h"
 #include <stdio.h>
 
 void	updatefield_left(int x, int y, t_so_long *mypath)

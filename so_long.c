@@ -6,12 +6,12 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:24:16 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:55:36 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:28:01 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "game.h"
+#include "so_long.h"
 
 int	count_mapunit(char **argv)
 {
@@ -33,7 +33,7 @@ int	count_mapunit(char **argv)
 	return (linenbr);
 }
 
-void	ft_readmap(t_so_long *mygame, char **argv)
+void	readmap(t_so_long *mygame, char **argv)
 {
 	int		fdnbr;
 	int		linenbr;
@@ -56,48 +56,48 @@ void	ft_readmap(t_so_long *mygame, char **argv)
 	mygame->img_width = ft_strlen(mygame->map.map[0]);
 }
 
-void	ft_map_base(t_so_long *mygame)
+void	put_base(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			putpath(jwidth, iheight, mygame);
-			jwidth++;
+			putpath(width, height, mygame);
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 }
 
 void	putmap(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			if (mygame->map.map[iheight][jwidth] == '1')
-				putwall(jwidth, iheight, mygame);
-			else if (mygame->map.map[iheight][jwidth] == 'P')
-				putplayer(jwidth, iheight, mygame);
-			else if (mygame->map.map[iheight][jwidth] == 'C')
-				putcollect(jwidth, iheight, mygame);
-			else if (mygame->map.map[iheight][jwidth] == 'E')
-				putexit(jwidth, iheight, mygame);
-			jwidth++;
+			if (mygame->map.map[height][width] == '1')
+				putwall(width, height, mygame);
+			else if (mygame->map.map[height][width] == 'P')
+				putplayer(width, height, mygame);
+			else if (mygame->map.map[height][width] == 'C')
+				putcollect(width, height, mygame);
+			else if (mygame->map.map[height][width] == 'E')
+				putexit(width, height, mygame);
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 }
 
@@ -108,16 +108,16 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	ft_memset(&mygame, 0, sizeof(t_so_long));
-	ft_readmap(&mygame, argv);
+	readmap(&mygame, argv);
 	mygame.mlx = mlx_init();
 	mygame.window = mlx_new_window(mygame.mlx, (mygame.img_width * 100),
 			(mygame.img_height * 100), "so_long");
 	errors(&mygame);
 	ft_load_img(&mygame);
-	ft_map_base(&mygame);
+	put_base(&mygame);
 	putmap(&mygame);
 	mlx_hook(mygame.window, 2, (1L << 0), playermove, &mygame);
-	mlx_hook(mygame.window, 17, (1L << 17), ft_exitgame, &mygame);
+	mlx_hook(mygame.window, 17, (1L << 17), exitgame, &mygame);
 	mlx_loop(mygame.mlx);
 	return (0);
 }

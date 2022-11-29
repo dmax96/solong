@@ -6,11 +6,11 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 14:34:19 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:31:29 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:26:38 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "so_long.h"
 
 void	putpath(int x, int y, t_so_long *mypath)
 {

@@ -6,104 +6,104 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 13:50:45 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:09:12 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:28:01 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "so_long.h"
 
 int	checkwall(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		iheight++;
+		height++;
 	}
-	iheight = 0;
-	jwidth = 0;
-	while (jwidth < mygame->img_width)
+	height = 0;
+	width = 0;
+	while (width < mygame->img_width)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		jwidth++;
+		width++;
 	}
 	return (0);
 }
 
 int	checkwall2(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = mygame->img_width - 1;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = mygame->img_width - 1;
+	while (height < mygame->img_height)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		iheight++;
+		height++;
 	}
-	iheight = mygame->img_height - 1;
-	jwidth = 0;
-	while (jwidth < mygame->img_width)
+	height = mygame->img_height - 1;
+	width = 0;
+	while (width < mygame->img_width)
 	{
-		if (mygame->map.map[iheight][jwidth] != '1')
+		if (mygame->map.map[height][width] != '1')
 			return (-1);
-		jwidth++;
+		width++;
 	}
 	return (0);
 }
 
 int	checkletters(t_so_long *mygame)
 {
-	int		iheight;
-	int		jwidth;
+	int		height;
+	int		width;
 	char	c;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			c = mygame->map.map[iheight][jwidth];
+			c = mygame->map.map[height][width];
 			if (c != '0' && c != '1' && c != 'P' && c != 'C' && c != 'E')
 				return (-1);
-			jwidth++;
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 	return (0);
 }
 
 int	checkmaparameters(t_so_long *mygame)
 {
-	int	iheight;
-	int	jwidth;
+	int	height;
+	int	width;
 
-	iheight = 0;
-	jwidth = 0;
-	while (iheight < mygame->img_height)
+	height = 0;
+	width = 0;
+	while (height < mygame->img_height)
 	{
-		while (jwidth < mygame->img_width)
+		while (width < mygame->img_width)
 		{
-			if (mygame->map.map[iheight][jwidth] == 'P')
+			if (mygame->map.map[height][width] == 'P')
 				mygame->maperrors.plycount++;
-			else if (mygame->map.map[iheight][jwidth] == 'C')
+			else if (mygame->map.map[height][width] == 'C')
 				mygame->maperrors.colcount++;
-			else if (mygame->map.map[iheight][jwidth] == 'E')
+			else if (mygame->map.map[height][width] == 'E')
 				mygame->maperrors.extcount++;
-			jwidth++;
+			width++;
 		}
-		iheight++;
-		jwidth = 0;
+		height++;
+		width = 0;
 	}
 	if (mygame->maperrors.plycount != 1 || mygame->maperrors.colcount < 1
 		|| mygame->maperrors.extcount < 1)
