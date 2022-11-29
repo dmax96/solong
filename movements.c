@@ -6,139 +6,139 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 10:33:26 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:28:01 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:30:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
 
-void	ft_up(t_so_long *mygame)
+void	ft_up(t_so_long *game)
 {
 	int		height;
 	int		width;
 
-	height = mygame->myplayer.vertical;
-	width = mygame->myplayer.horizontal;
+	height = game->myplayer.vertical;
+	width = game->myplayer.horizontal;
 	if (height - 1 != 0)
 	{
-		if (mygame->map.map[height - 1][width] == '0'
-			|| mygame->map.map[height - 1][width] == 'C')
+		if (game->map.map[height - 1][width] == '0'
+			|| game->map.map[height - 1][width] == 'C')
 		{
-			if (mygame->map.map[height - 1][width] == 'C')
+			if (game->map.map[height - 1][width] == 'C')
 			{
-				count_collectible(mygame);
-				putpath(width, height - 1, mygame);
-				update_w(width, height, mygame);
-				mygame->map.map[height - 1][width] = '0';
+				count_collectible(game);
+				putpath(width, height - 1, game);
+				update_w(width, height, game);
+				game->map.map[height - 1][width] = '0';
 				return ;
 			}
-			mygame->myplayer.vertical--;
-			update_w(width, height, mygame);
-			count_steps(mygame);
+			game->myplayer.vertical--;
+			update_w(width, height, game);
+			count_steps(game);
 		}
-		else if (mygame->map.map[height - 1][width] == 'E')
-			check_collectible(mygame);
+		else if (game->map.map[height - 1][width] == 'E')
+			check_collectible(game);
 	}
 }
 
-void	ft_left(t_so_long *mygame)
+void	ft_left(t_so_long *game)
 {
 	int	height;
 	int	width;
 
-	height = mygame->myplayer.vertical;
-	width = mygame->myplayer.horizontal;
+	height = game->myplayer.vertical;
+	width = game->myplayer.horizontal;
 	if (width - 1 != 0)
 	{
-		if (mygame->map.map[height][width - 1] == '0'
-			|| mygame->map.map[height][width - 1] == 'C')
+		if (game->map.map[height][width - 1] == '0'
+			|| game->map.map[height][width - 1] == 'C')
 		{
-			if (mygame->map.map[height][width - 1] == 'C')
+			if (game->map.map[height][width - 1] == 'C')
 			{
-				count_collectible(mygame);
-				putpath(width - 1, height, mygame);
-				update_a(width, height, mygame);
-				mygame->map.map[height][width - 1] = '0';
+				count_collectible(game);
+				putpath(width - 1, height, game);
+				update_a(width, height, game);
+				game->map.map[height][width - 1] = '0';
 				return ;
 			}
-			mygame->myplayer.horizontal--;
-			update_a(width, height, mygame);
-			count_steps(mygame);
+			game->myplayer.horizontal--;
+			update_a(width, height, game);
+			count_steps(game);
 		}
-		else if (mygame->map.map[height][width - 1] == 'E')
-			check_collectible(mygame);
+		else if (game->map.map[height][width - 1] == 'E')
+			check_collectible(game);
 	}
 }
 
-void	ft_down(t_so_long *mygame)
+void	ft_down(t_so_long *game)
 {
 	int	height;
 	int	width;
 
-	height = mygame->myplayer.vertical;
-	width = mygame->myplayer.horizontal;
-	if (height + 1 != mygame->img_height - 1)
+	height = game->myplayer.vertical;
+	width = game->myplayer.horizontal;
+	if (height + 1 != game->img_height - 1)
 	{
-		if (mygame->map.map[height + 1][width] == '0'
-			|| mygame->map.map[height + 1][width] == 'C')
+		if (game->map.map[height + 1][width] == '0'
+			|| game->map.map[height + 1][width] == 'C')
 		{
-			if (mygame->map.map[height + 1][width] == 'C')
+			if (game->map.map[height + 1][width] == 'C')
 			{
-				count_collectible(mygame);
-				putpath(width, height + 1, mygame);
-				update_s(width, height, mygame);
-				mygame->map.map[height + 1][width] = '0';
+				count_collectible(game);
+				putpath(width, height + 1, game);
+				update_s(width, height, game);
+				game->map.map[height + 1][width] = '0';
 				return ;
 			}
-			mygame->myplayer.vertical++;
-			update_s(width, height, mygame);
-			count_steps(mygame);
+			game->myplayer.vertical++;
+			update_s(width, height, game);
+			count_steps(game);
 		}
-		else if (mygame->map.map[height + 1][width] == 'E')
-			check_collectible(mygame);
+		else if (game->map.map[height + 1][width] == 'E')
+			check_collectible(game);
 	}
 }
 
-void	ft_right(t_so_long *mygame)
+void	ft_right(t_so_long *game)
 {
 	int	height;
 	int	width;
 
-	height = mygame->myplayer.vertical;
-	width = mygame->myplayer.horizontal;
-	if (width + 1 != mygame->img_width - 1)
+	height = game->myplayer.vertical;
+	width = game->myplayer.horizontal;
+	if (width + 1 != game->img_width - 1)
 	{
-		if (mygame->map.map[height][width + 1] == '0'
-			|| mygame->map.map[height][width + 1] == 'C')
+		if (game->map.map[height][width + 1] == '0'
+			|| game->map.map[height][width + 1] == 'C')
 		{
-			if (mygame->map.map[height][width + 1] == 'C')
+			if (game->map.map[height][width + 1] == 'C')
 			{
-				count_collectible(mygame);
-				putpath(width + 1, height, mygame);
-				update_d(width, height, mygame);
-				mygame->map.map[height][width + 1] = '0';
+				count_collectible(game);
+				putpath(width + 1, height, game);
+				update_d(width, height, game);
+				game->map.map[height][width + 1] = '0';
 				return ;
 			}
-			mygame->myplayer.horizontal++;
-			update_d(width, height, mygame);
-			count_steps(mygame);
+			game->myplayer.horizontal++;
+			update_d(width, height, game);
+			count_steps(game);
 		}
-		else if (mygame->map.map[height][width + 1] == 'E')
-			check_collectible(mygame);
+		else if (game->map.map[height][width + 1] == 'E')
+			check_collectible(game);
 	}
 }
 
-int	playermove(int keycode, t_so_long *mygame)
+int	playermove(int keycode, t_so_long *game)
 {
 	if (keycode == 13)
-		ft_up(mygame);
+		ft_up(game);
 	if (keycode == 0)
-		ft_left(mygame);
+		ft_left(game);
 	if (keycode == 1)
-		ft_down(mygame);
+		ft_down(game);
 	if (keycode == 2)
-		ft_right(mygame);
+		ft_right(game);
 	if (keycode == 53)
 		exitgame();
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:24:16 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:28:01 by lorenzodima      ###   ########.fr       */
+/*   Updated: 2022/11/29 17:30:28 by lorenzodima      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	count_mapunit(char **argv)
 	return (linenbr);
 }
 
-void	readmap(t_so_long *mygame, char **argv)
+void	readmap(t_so_long *game, char **argv)
 {
 	int		fdnbr;
 	int		linenbr;
@@ -41,33 +41,33 @@ void	readmap(t_so_long *mygame, char **argv)
 
 	linenbr = count_mapunit(argv);
 	fdnbr = open(argv[1], O_RDONLY);
-	mygame->map.map = (char **)malloc(linenbr * sizeof(char *));
+	game->map.map = (char **)malloc(linenbr * sizeof(char *));
 	linenbr = 0;
 	while (1)
 	{
 		str = get_next_line(fdnbr);
 		if (str == NULL)
 			break ;
-		mygame->map.map[linenbr] = str;
+		game->map.map[linenbr] = str;
 		linenbr++;
 	}
 	close(fdnbr);
-	mygame->img_height = linenbr;
-	mygame->img_width = ft_strlen(mygame->map.map[0]);
+	game->img_height = linenbr;
+	game->img_width = ft_strlen(game->map.map[0]);
 }
 
-void	put_base(t_so_long *mygame)
+void	put_base(t_so_long *game)
 {
 	int	height;
 	int	width;
 
 	height = 0;
 	width = 0;
-	while (height < mygame->img_height)
+	while (height < game->img_height)
 	{
-		while (width < mygame->img_width)
+		while (width < game->img_width)
 		{
-			putpath(width, height, mygame);
+			putpath(width, height, game);
 			width++;
 		}
 		height++;
@@ -75,25 +75,25 @@ void	put_base(t_so_long *mygame)
 	}
 }
 
-void	putmap(t_so_long *mygame)
+void	putmap(t_so_long *game)
 {
 	int	height;
 	int	width;
 
 	height = 0;
 	width = 0;
-	while (height < mygame->img_height)
+	while (height < game->img_height)
 	{
-		while (width < mygame->img_width)
+		while (width < game->img_width)
 		{
-			if (mygame->map.map[height][width] == '1')
-				putwall(width, height, mygame);
-			else if (mygame->map.map[height][width] == 'P')
-				putplayer(width, height, mygame);
-			else if (mygame->map.map[height][width] == 'C')
-				putcollect(width, height, mygame);
-			else if (mygame->map.map[height][width] == 'E')
-				putexit(width, height, mygame);
+			if (game->map.map[height][width] == '1')
+				putwall(width, height, game);
+			else if (game->map.map[height][width] == 'P')
+				putplayer(width, height, game);
+			else if (game->map.map[height][width] == 'C')
+				putcollect(width, height, game);
+			else if (game->map.map[height][width] == 'E')
+				putexit(width, height, game);
 			width++;
 		}
 		height++;
@@ -103,21 +103,21 @@ void	putmap(t_so_long *mygame)
 
 int	main(int argc, char **argv)
 {
-	t_so_long	mygame;
+	t_so_long	game;
 
 	if (argc != 2)
 		return (0);
-	ft_memset(&mygame, 0, sizeof(t_so_long));
-	readmap(&mygame, argv);
-	mygame.mlx = mlx_init();
-	mygame.window = mlx_new_window(mygame.mlx, (mygame.img_width * 100),
-			(mygame.img_height * 100), "so_long");
-	errors(&mygame);
-	ft_load_img(&mygame);
-	put_base(&mygame);
-	putmap(&mygame);
-	mlx_hook(mygame.window, 2, (1L << 0), playermove, &mygame);
-	mlx_hook(mygame.window, 17, (1L << 17), exitgame, &mygame);
-	mlx_loop(mygame.mlx);
+	ft_memset(&game, 0, sizeof(t_so_long));
+	readmap(&game, argv);
+	game.mlx = mlx_init();
+	game.window = mlx_new_window(game.mlx, (game.img_width * 100),
+			(game.img_height * 100), "so_long");
+	errors(&game);
+	ft_load_img(&game);
+	put_base(&game);
+	putmap(&game);
+	mlx_hook(game.window, 2, (1L << 0), playermove, &game);
+	mlx_hook(game.window, 17, (1L << 17), exitgame, &game);
+	mlx_loop(game.mlx);
 	return (0);
 }
