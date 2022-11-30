@@ -6,12 +6,11 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 11:12:54 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/11/30 11:12:56 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:16:23 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 void	ft_up(t_so_long *game)
 {

@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 11:12:09 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/11/30 11:12:11 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:18:38 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <errno.h>
 
 typedef struct s_list
 {

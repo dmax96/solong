@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:53:06 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/11/30 10:57:38 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:18:53 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include <mlx.h>
 # include "./libft/libft.h"
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
-# include <errno.h>
 
 typedef struct s_map
 {

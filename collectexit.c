@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/24 10:50:07 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/30 11:01:59 by ldi-masc         ###   ########.fr       */
+/*   Created: 2022/11/30 14:16:51 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 14:21:58 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	check_collectible(t_so_long *game)
 
 void	count_steps(t_so_long *game)
 {
+	int	i;
+
 	game->steps++;
-	printf("Steps taken: %d\n", game->steps);
+	i = game->steps;
+	write(1, "\n Steps taken: ", 16);
+	ft_putnbr_fd(i, 1);
 }

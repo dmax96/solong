@@ -6,12 +6,11 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 11:13:24 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/11/30 11:13:26 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:15:20 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 void	update_w(int width, int height, t_so_long *game)
 {

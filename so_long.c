@@ -6,11 +6,10 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 11:13:16 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/11/30 11:13:18 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:15:17 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "so_long.h"
 
 int	count_mapunit(char **argv)
