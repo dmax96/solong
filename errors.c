@@ -6,7 +6,7 @@
 /*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 11:12:30 by ldi-masc          #+#    #+#             */
-/*   Updated: 2022/11/30 14:02:16 by ldi-masc         ###   ########.fr       */
+/*   Updated: 2022/11/30 14:25:49 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,6 @@ void	errors(t_so_long *game)
 	{
 		write(1, "Error\n", 7);
 		write(1, "Your map is wrong!", 18);
-		exit (0);
+		exit (1);
 	}
 }
