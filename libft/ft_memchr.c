@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 08:08:29 by jzhou             #+#    #+#             */
-/*   Updated: 2021/06/28 08:48:20 by jzhou            ###   ########.fr       */
+/*   Created: 2022/11/30 11:08:42 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:08:44 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*s1;

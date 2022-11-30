@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 13:50:58 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:30:28 by lorenzodima      ###   ########.fr       */
+/*   Created: 2022/11/30 10:53:06 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 10:57:38 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GAME_H
-# define FT_GAME_H
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-# include "minilibx/mlx.h"
+# include <mlx.h>
 # include "./libft/libft.h"
 # include <unistd.h>
 # include <fcntl.h>
@@ -123,4 +123,5 @@ void	update_w(int width, int height, t_so_long *game);
 void	update_a(int width, int height, t_so_long *game);
 void	update_s(int width, int height, t_so_long *game);
 void	update_d(int width, int height, t_so_long *game);
+
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 13:50:45 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:30:28 by lorenzodima      ###   ########.fr       */
+/*   Created: 2022/11/30 11:12:30 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:44:51 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void	errors(t_so_long *game)
 		|| checksquare(game) == -1)
 	{
 		printf("Error\n");
-		printf("Your map is wrong! (scemo)");
+		printf("Your map is wrong!");
 		exit (0);
 	}
 }

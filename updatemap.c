@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   updatemap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 12:39:21 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:26:38 by lorenzodima      ###   ########.fr       */
+/*   Created: 2022/11/30 11:13:29 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:13:31 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

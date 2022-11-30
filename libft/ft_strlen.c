@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 08:11:19 by jzhou             #+#    #+#             */
-/*   Updated: 2021/06/25 20:41:26 by jzhou            ###   ########.fr       */
+/*   Created: 2022/11/30 11:10:55 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:10:57 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
+
 size_t	ft_strlen(const char *s)
 {
 	int	index;

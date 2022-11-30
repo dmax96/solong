@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 14:58:28 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 16:16:40 by lorenzodima      ###   ########.fr       */
+/*   Created: 2022/11/30 11:11:56 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:11:59 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

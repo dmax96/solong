@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 14:04:56 by jzhou             #+#    #+#             */
-/*   Updated: 2021/06/25 20:25:53 by jzhou            ###   ########.fr       */
+/*   Created: 2022/11/30 11:07:26 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:07:28 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
+
 int	ft_isprint(int arg)
 {
 	if (arg >= 32 && arg < 127)

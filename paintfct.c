@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   paintfct.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 14:34:19 by jzhou             #+#    #+#             */
-/*   Updated: 2022/11/29 17:26:38 by lorenzodima      ###   ########.fr       */
+/*   Created: 2022/11/30 11:12:59 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:19:08 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,4 @@ void	putexit(int x, int y, t_so_long *myexitus)
 {
 	mlx_put_image_to_window(myexitus->mlx, myexitus->window, myexitus->exitus,
 		x * 100, y * 100);
-}
-
-void	putplayer_left(int x, int y, t_so_long *myplayerimg)
-{
-	mlx_put_image_to_window(myplayerimg->mlx, myplayerimg->window,
-		myplayerimg->playerleft, x * 100, y * 100);
-}
-
-void	putplayer_right(int x, int y, t_so_long *myplayerimg)
-{
-	mlx_put_image_to_window(myplayerimg->mlx, myplayerimg->window,
-		myplayerimg->playerright, x * 100, y * 100);
-}
-
-void	putplayer_down(int x, int y, t_so_long *myplayerimg)
-{
-	mlx_put_image_to_window(myplayerimg->mlx, myplayerimg->window,
-		myplayerimg->playerdown, x * 100, y * 100);
 }

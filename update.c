@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzodimascia <lorenzodimascia@studen    +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 10:57:01 by vbellucc          #+#    #+#             */
-/*   Updated: 2022/11/29 17:30:28 by lorenzodima      ###   ########.fr       */
+/*   Created: 2022/11/30 11:13:24 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:13:26 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

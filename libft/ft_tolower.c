@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jzhou <jzhou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ldi-masc <ldi-masc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 14:11:18 by jzhou             #+#    #+#             */
-/*   Updated: 2021/06/25 20:49:46 by jzhou            ###   ########.fr       */
+/*   Created: 2022/11/30 11:11:37 by ldi-masc          #+#    #+#             */
+/*   Updated: 2022/11/30 11:11:39 by ldi-masc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int ch)
 {
-	if (ch >= 65 && ch <= 90 )
+	if (ch >= 65 && ch <= 90)
 		return (ch + 32);
 	else
 		return (ch);
